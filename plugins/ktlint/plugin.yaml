@@ -1,0 +1,15 @@
+tasks:
+  ktlintCheck:
+    action: !dev.ktc.plugins.ktlint.checkFormatting
+      moduleRoot: ${module.rootDir}
+      settings: ${pluginSettings}
+  ktlintFormat:
+    action: !dev.ktc.plugins.ktlint.formatSources
+      moduleRoot: ${module.rootDir}
+      settings: ${pluginSettings}
+
+checks:
+  - ktlintCheck
+
+commands:
+  - ktlintFormat

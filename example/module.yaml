@@ -1,0 +1,4 @@
+product: jvm/lib
+
+apply:
+  - //templates/ktlint.module-template.yaml

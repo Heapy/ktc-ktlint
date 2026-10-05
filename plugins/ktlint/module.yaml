@@ -1,0 +1,10 @@
+product: jvm/amper-plugin
+
+pluginInfo:
+  id: ktlint
+  settingsClass: dev.ktc.plugins.ktlint.KtlintSettings
+
+dependencies:
+  - com.pinterest.ktlint:ktlint-rule-engine:1.8.0
+  - com.pinterest.ktlint:ktlint-ruleset-standard:1.8.0
+  - org.slf4j:slf4j-simple:2.0.20: runtime-only

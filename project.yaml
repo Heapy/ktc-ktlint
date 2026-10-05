@@ -1,0 +1,6 @@
+modules:
+  - example
+  - plugins/ktlint
+
+plugins:
+  - //plugins/ktlint
