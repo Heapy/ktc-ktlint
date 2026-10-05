@@ -5,6 +5,7 @@ import java.nio.file.Files
 import java.nio.file.Path
 import java.nio.file.SimpleFileVisitor
 import java.nio.file.attribute.BasicFileAttributes
+import kotlin.io.path.invariantSeparatorsPathString
 
 /** Discover only files owned by this module, without following symbolic links. */
 internal fun kotlinSources(root: Path, includes: List<String>, excludes: List<String>): List<Path> {
@@ -31,7 +32,8 @@ internal fun kotlinSources(root: Path, includes: List<String>, excludes: List<St
             return FileVisitResult.CONTINUE
         }
     })
-    return files.sortedBy { root.relativize(it).toString() }
+    // Keep diagnostics and format order stable across '/' and '\\' host separators.
+    return files.sortedBy { root.relativize(it).invariantSeparatorsPathString }
 }
 
 private fun glob(root: Path, pattern: String): (Path) -> Boolean {

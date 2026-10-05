@@ -21,9 +21,9 @@ class SourcesTest {
     }
 
     @Test
-    fun discoversSourcesTestsScriptsAndPlatformDirectories() = inModule { root ->
+    fun discoversSourcesTestsScriptsAndPlatformDirectoriesInPortableOrder() = inModule { root ->
         val expected = listOf("build.main.kts", "src/Hello.kt", "src@jvm/Jvm.kt", "test/Test.kt", "test@jvm/JvmTest.kt")
-        expected.forEach { file(root, it) }
+        expected.reversed().forEach { file(root, it) }
         file(root, "src/Java.java")
         val found = kotlinSources(root, listOf("**/*.kt", "**/*.kts"), emptyList())
         assertEquals(expected, found.map { root.relativize(it).toString().replace('\\', '/') })
