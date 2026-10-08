@@ -1,4 +1,4 @@
-package dev.ktc.plugins.ktlint
+package io.heapy.ktc.plugins.ktlint
 
 import com.pinterest.ktlint.rule.engine.api.Code
 import com.pinterest.ktlint.rule.engine.api.KtLintParseException

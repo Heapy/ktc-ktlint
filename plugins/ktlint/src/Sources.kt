@@ -1,4 +1,4 @@
-package dev.ktc.plugins.ktlint
+package io.heapy.ktc.plugins.ktlint
 
 import java.nio.file.FileVisitResult
 import java.nio.file.Files

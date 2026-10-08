@@ -2,7 +2,7 @@ product: jvm/amper-plugin
 
 pluginInfo:
   id: ktlint
-  settingsClass: dev.ktc.plugins.ktlint.KtlintSettings
+  settingsClass: io.heapy.ktc.plugins.ktlint.KtlintSettings
 
 dependencies:
   - com.pinterest.ktlint:ktlint-rule-engine:1.8.0
